@@ -8,14 +8,14 @@ Gem::Specification.new do |spec|
 
   spec.summary       = %q{This is a test gem that does not do anything.}
   spec.description   = %q{This gem is for testing rake release.}
-  spec.homepage      = "http://google.com"
+  spec.homepage      = "http://github.com/edwardbartholomew/Barthologem"
   spec.license       = "MIT"
   spec.required_ruby_version = Gem::Requirement.new(">= 2.5.0")
 
-  spec.metadata["allowed_push_host"] = 'http://rubygems.org'
+  #spec.metadata["allowed_push_host"] = 'http://rubygems.org'
 
   spec.metadata["homepage_uri"] = spec.homepage
-  spec.metadata["source_code_uri"] = "http://rubygems.org/backsideofops/barthologem"
+  spec.metadata["source_code_uri"] = "http://github.com/edwardbartholomew/Barthologem"
   #spec.metadata["changelog_uri"] = 'CHANGELOG.md'
 
   # Specify which files should be added to the gem when it is released.
@@ -31,5 +31,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "rake"
   
   spec.add_runtime_dependency "activesupport", [">= 4.0"]
-  
+
 end
