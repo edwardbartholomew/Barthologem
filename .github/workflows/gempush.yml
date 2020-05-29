@@ -19,6 +19,7 @@ jobs:
 
     - name: Publish to RubyGems
       run: |
+        echo ${GITHUB_REF}
         gem build barthologem.gemspec
         RELEASE_VERSION=${GITHUB_REF#?};
         gem push barthologem-${RELEASE_VERSION}.gem
