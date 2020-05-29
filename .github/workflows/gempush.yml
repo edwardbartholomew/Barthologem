@@ -19,13 +19,6 @@ jobs:
 
     - name: Publish to RubyGems
       run: |
-        gem list bundler
-        mkdir -p $HOME/.gem
-        touch $HOME/.gem/credentials
-        chmod 0600 $HOME/.gem/credentials
-        echo ${RUBYGEMS_PRIVATE_KEY_PASSWORD} | gpg --output certs/gem-private_key.pem --passphrase-fd 0 certs/gem-private_key.pem.gpg
-        sha256sum certs/gem-private_key.pem | grep 7fd21648141c38cbfa08e3a7c16746c97811c750a0be727f737700fea0b4cebf
-        printf -- "---\n:rubygems_api_key: ${GEM_HOST_API_KEY}\n" > $HOME/.gem/credentials
         gem build barthologem.gemspec
         RELEASE_VERSION=${GITHUB_REF#?};
         gem push barthologem-${RELEASE_VERSION}.gem
