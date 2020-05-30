@@ -30,4 +30,4 @@ jobs:
 
     - name: Testme
       run: |
-        echo $github.event.base_ref
+        echo $github.ref
