@@ -19,7 +19,7 @@ jobs:
         version: 2.6.x
 
     - name: Publish to RubyGems
-      if: github.event.base_ref == 'refs/heads/master'
+      if: github.ref == 'refs/heads/master'
       run: |
         echo ${GITHUB_REF}
         gem build barthologem.gemspec
