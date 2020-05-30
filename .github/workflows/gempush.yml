@@ -12,17 +12,22 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+
     - name: Set up Ruby 2.6
       uses: actions/setup-ruby@v1
       with:
         version: 2.6.x
 
     - name: Publish to RubyGems
+      if: github.event.base_ref == 'refs/heads/master'
       run: |
-        echo "test"
         echo ${GITHUB_REF}
         gem build barthologem.gemspec
         RELEASE_VERSION=${GITHUB_REF#refs/tags/v}
         gem push barthologem-${RELEASE_VERSION}.gem
       env:
         GEM_HOST_API_KEY: ${{ secrets.RUBYGEMS_AUTH_TOKEN }}
+
+    - name: Testme
+      run: |
+        echo $github.event.base_ref
