@@ -38,6 +38,11 @@ jobs:
       env:
         GEM_HOST_API_KEY: ${{ secrets.RUBYGEMS_AUTH_TOKEN }}
 
+
+    - name: Environment
+      run: |
+        echo $HOME
+        env
     - name: Dump GitHub context
       env:
         GITHUB_CONTEXT: ${{ toJson(github) }}
