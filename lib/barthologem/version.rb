@@ -1,3 +1,3 @@
 module Barthologem
-  VERSION = "0.1.8"
+  VERSION = "9.0.0"
 end
