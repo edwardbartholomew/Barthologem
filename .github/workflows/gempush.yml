@@ -41,8 +41,10 @@ jobs:
 
     - name: Environment
       run: |
-        echo $HOME
+        echo "pwd: $(pwd)"
+        echo "\$HOME: $HOME"
         env
+        tree
     - name: Dump GitHub context
       env:
         GITHUB_CONTEXT: ${{ toJson(github) }}
