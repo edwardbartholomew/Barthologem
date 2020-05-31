@@ -44,6 +44,7 @@ jobs:
         echo "pwd: $(pwd)"
         echo "\$HOME: $HOME"
         env
+        apt-get install -y tree
         tree
     - name: Dump GitHub context
       env:
